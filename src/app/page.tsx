@@ -47,7 +47,7 @@ export default function Home() {
       await requestFunds({
         ...FaucetPPT,
         functionName: "requestFunds",
-        args: [address],
+        args: [address as `0x${string}`],
       });
       setIsLoading(false);
     } catch (err) {
