@@ -57,7 +57,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-          pip install boto3 requests
+          pip install boto3 requests botocore
 
       - name: Extract task description
         id: task
@@ -105,9 +105,19 @@ jobs:
           import requests
           import subprocess
           import tempfile
+          from botocore.config import Config
+          
           
           def get_bedrock_client():
-              return boto3.client('bedrock-runtime', region_name=os.environ['AWS_DEFAULT_REGION'])
+            config = Config(
+                read_timeout=120,  # Increase from default (~60s)
+                connect_timeout=10,  # Optional, you can tweak this too
+                retries={
+                    'max_attempts': 3,
+                    'mode': 'standard'
+                }
+            )
+            return boto3.client('bedrock-runtime', region_name=os.environ['AWS_DEFAULT_REGION'], config=config)
           
           def read_file_safely(filepath, max_lines=100):
               """Read file content safely, limiting lines for context"""
