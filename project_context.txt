@@ -1,0 +1,73 @@
+Project structure:
+.
+├── LICENSE
+├── README.md
+├── codebase_files.txt
+├── contracts
+│   ├── README.md
+│   ├── contracts
+│   │   └── FaucetPPT.sol
+│   ├── hardhat.config.js
+│   ├── ignition
+│   │   └── modules
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── scripts
+│   │   └── deploy.js
+│   └── test
+│       └── Lock.js
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── project_context.txt
+├── public
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── src
+│   ├── app
+│   │   ├── config.ts
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components
+│   │   └── ClientProviders.tsx
+│   └── contracts
+│       └── FaucetPPT.ts
+└── tsconfig.json
+
+12 directories, 28 files
+Package.json content:
+{
+  "name": "faucet-ppt",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@rainbow-me/rainbowkit": "^2.2.4",
+    "@tanstack/react-query": "^5.72.2",
+    "ethers": "^6.13.5",
+    "next": "15.2.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "viem": "^2.26.2",
+    "wagmi": "^2.14.16"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

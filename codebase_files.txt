@@ -1,0 +1,10 @@
+./src/contracts/FaucetPPT.ts
+./src/app/layout.tsx
+./src/app/page.tsx
+./src/app/config.ts
+./src/components/ClientProviders.tsx
+./next.config.ts
+./contracts/test/Lock.js
+./contracts/ignition/modules/Lock.js
+./contracts/scripts/deploy.js
+./contracts/hardhat.config.js
